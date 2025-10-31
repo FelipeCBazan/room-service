@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serviço de Quarto • Room Service via WhatsApp</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <!-- Coloque seu arquivo de logo em assets/logo.svg|png|jpg|webp e ajuste o src se quiser -->
+        <img id="hotelLogo" src="assets/logo.svg" alt="Logo do Hotel" />
+        <div class="brand-text">
+          <h1>Serviço de Quarto • Room Service</h1>
+          <p>Monte o pedido e abra no WhatsApp com 1 clique • Build your order and open WhatsApp in one click.</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <details class="box">
+        <summary>Configurar WhatsApp do hotel • Set hotel WhatsApp</summary>
+        <label for="hotelPhone">Telefone do hotel (DDI+DDD+nº, só dígitos) • Hotel phone (country+area+number, digits only)</label>
+        <input id="hotelPhone" type="tel" placeholder="5511999999999" />
+        <p class="hint">Ex.: Brasil = 55. Salva automaticamente. • Example: Brazil=55. Saved locally.</p>
+      </details>
+
+      <form id="pedidoForm">
+        <label for="quarto">Número do quarto/apto • Room number</label>
+        <input id="quarto" name="quarto" type="text" placeholder="Ex.: 201" required />
+
+        <div class="row">
+          <div>
+            <label for="hora">Preferência de entrega • Delivery time (optional)</label>
+            <input id="hora" name="hora" type="time" />
+          </div>
+          <div>
+            <label for="nome">Seu nome • Your name (optional)</label>
+            <input id="nome" name="nome" type="text" placeholder="Opcional / Optional" />
+          </div>
+        </div>
+
+        <label for="busca">Pesquisar itens • Search items</label>
+        <input id="busca" type="text" placeholder="Ex.: omelete, suco, salada… / e.g., omelet, juice, salad…" />
+
+        <div id="menu"></div>
+
+        <label for="obs">Observações / Notes</label>
+        <textarea id="obs" placeholder="Ex.: Café sem açúcar; sem cebola; 2 talheres extras. / e.g., No sugar; no onions; 2 extra cutlery."></textarea>
+
+        <div class="total">
+          <span>Total estimado • Estimated total</span>
+          <span id="total">R$ 0,00</span>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Abrir WhatsApp com o pedido • Open WhatsApp with order</button>
+        <button class="btn btn-secondary" type="button" id="btnLimpeza">Pedir limpeza/toalhas • Request housekeeping/towels</button>
+      </form>
+
+      <div id="okMsg" class="hint" style="display:none; margin-top:10px"><span class="ok">✔</span> Link aberto no WhatsApp • Link opened in WhatsApp.</div>
+    </main>
+
+    <footer>
+      <div class="mini">
+        Café da manhã no quarto: 06h–11h. Sopas incluem 80g de pães/torradas. Caipirinhas 400ml. Ajuste o número do WhatsApp acima. • Breakfast in room: 6:00–11:00. Soups include 80g bread/toast. Caipirinhas 400ml. Set WhatsApp number above.
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
